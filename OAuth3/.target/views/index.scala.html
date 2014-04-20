@@ -1,0 +1,20 @@
+@(tweets:java.util.List[Tweet])
+@main("Test to Play Twitter"){
+    <div class="container">
+        <div class="page-header">
+        <span class="badge">1</span>
+            <h1> @tweets.size() Tweet(s)</h1>
+        </div>
+        @for(tweet <- tweets){
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="@tweet.profileImageUrl" alt=""/>
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">@tweet.screenName (@tweet.id)</h4>
+                    @tweet.text
+                </div>
+            </div>
+        }
+    </div>
+}
